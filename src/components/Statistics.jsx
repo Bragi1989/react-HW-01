@@ -6,25 +6,25 @@ const Statistics = ({ title, stats }) => {
      <h2 className="title">Upload stats</h2>
 
   <ul className="stat-list">
-    <li className="item">
-      <span className="label">.docx</span>
-      <span className="percentage">4%</span>
+    <li className="item-one">
+      <p className="stat-label">.docx</p>
+      <p className="stat-percentage">4%</p>
     </li>
-    <li className="item">
-      <span className="label">.mp3</span>
-      <span className="percentage">14%</span>
+    <li className="item-two">
+      <p className="stat-label">.mp3</p>
+      <p className="stat-percentage">14%</p>
     </li>
-    <li className="item">
-      <span className="label">.pdf</span>
-      <span className="percentage">41%</span>
+    <li className="item-three">
+      <p className="stat-label">.pdf</p>
+      <p className="stat-percentage">41%</p>
     </li>
-    <li className="item">
-      <span className="label">.mp4</span>
-      <span className="percentage">12%</span>
+    <li className="item-four">
+      <p className="stat-label">.mp4</p>
+      <p className="stat-percentage">12%</p>
     </li>
-    <li className="item">
-      <span className="label">.pdf</span>
-      <span className="percentage">10%</span>
+    <li className="item-five">
+      <p className="stat-label">.pdf</p>
+      <p className="stat-percentage">10%</p>
     </li>
   </ul>
     </section>
