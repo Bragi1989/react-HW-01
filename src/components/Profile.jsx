@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import css from './Profile.modul.css';
 
-const Profile = ({ name, tag, location, avatar, stats }) => {
+const Profile = (props) => {
  return (
     <div className="profile">
       <div className="description">

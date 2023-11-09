@@ -1,7 +1,7 @@
 import React from 'react';
 import css from './Statistics.modul.css';
 
-const Statistics = ({ title, stats }) => {
+const Statistics = (props) => {
   return (
     <section className="statistics">
      <h2 className="title">Upload stats</h2>
