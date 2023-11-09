@@ -22,7 +22,7 @@ const App = () => {
 
       <Statistics title="Upload stats" stats={data} />
 
-      <FriendList title="Upload friends" friends={friends} />
+      <FriendList friends={friends} />
 
       <TransactionHistory items={transactions} />
     </div>
