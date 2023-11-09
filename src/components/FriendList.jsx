@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import friendsData from '../data/friends.json';
+import css from './FriendList.modul.css';
 
 
 const FriendListItem = ({ avatar, name, isOnline }) => (

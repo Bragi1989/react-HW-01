@@ -1,4 +1,5 @@
 import React from 'react';
+import css from './TransactionHistory.modul.css'
 
 const TransactionHistory = ({ items }) => {
   return (
