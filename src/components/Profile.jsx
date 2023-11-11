@@ -1,35 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import css from './Profile.modul.css';
+import css from './Profile.module.css';
 
-const Profile = (props) => {
+export default function Profile({
+  userName,
+  tag,
+  location,
+  avatar,
+  stats: { followers, views, likes },
+}) {
  return (
-    <div className="profile">
-      <div className="description">
+   <div className={css.profile}>
+     <div className={css.description}>
         <img
-          src="https://cdn-icons-png.flaticon.com/512/2922/2922506.png"
+          src={avatar}
           alt="User avatar"
-          className="avatar"
-          height={70}
-          width={70}
-        />
-        <p className="name">Jacques Gluke</p>
-        <p className="tag">@jgluke</p>
-        <p className="location">Ocho Rios, Jamaica</p>
+         className={css.avatar} />
+       <p className={css.name}>{userName}</p>
+       <p className={css.tag}>{tag}</p>
+       <p className={css.location}>{location}</p>
       </div>
 
-      <ul className="stats">
-        <li className='stats-list'>
-          <p className="label">Followers</p>
-          <p className="quantity">5603</p>
+     <ul className={css.stats}>
+       <li className={css.statsList}>
+         <p className={css.label}>Followers</p>
+         <p className={css.quantity}>{followers}</p>
         </li>
-        <li className='stats-list'>
-          <p className="label">Views</p>
-          <p className="quantity">4827</p>
+        <li className={css.statsList}>
+           <p className={css.label}>Views</p>
+         <p className={css.quantity}>{views}</p>
         </li>
-        <li className='stats-list'>
-          <p className="label">Likes</p>
-          <p className="quantity">1308</p>
+        <li className={css.statsList}>
+           <p className={css.label}>Likes</p>
+         <p className={css.quantity}>{likes}</p>
         </li>
       </ul>
     </div>
@@ -37,15 +40,14 @@ const Profile = (props) => {
 };
 
 Profile.propTypes = {
-  username: PropTypes.string.isRequired,
+  userName: PropTypes.string.isRequired, 
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
   stats: PropTypes.shape({
-    Followers: PropTypes.number.isRequired,
-    Views: PropTypes.number.isRequired,
-    Likes: PropTypes.number.isRequired,
+    followers: PropTypes.number.isRequired, 
+    views: PropTypes.number.isRequired, 
+    likes: PropTypes.number.isRequired, 
   }).isRequired,
 };
 
-export default Profile;

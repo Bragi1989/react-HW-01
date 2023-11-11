@@ -1,35 +1,43 @@
 import React from 'react';
-import css from './Statistics.modul.css';
+import PropTypes from 'prop-types';
+import styles from './Statistics.module.css';
 
-const Statistics = (props) => {
+export default function Statistics({ stats, title }) {
   return (
-    <section className="statistics">
-     <h2 className="title">Upload stats</h2>
-
-  <ul className="stat-list">
-    <li className="item-one">
-      <p className="stat-label">.docx</p>
-      <p className="stat-percentage">4%</p>
-    </li>
-    <li className="item-two">
-      <p className="stat-label">.mp3</p>
-      <p className="stat-percentage">14%</p>
-    </li>
-    <li className="item-three">
-      <p className="stat-label">.pdf</p>
-      <p className="stat-percentage">41%</p>
-    </li>
-    <li className="item-four">
-      <p className="stat-label">.mp4</p>
-      <p className="stat-percentage">12%</p>
-    </li>
-    <li className="item-five">
-      <p className="stat-label">.pdf</p>
-      <p className="stat-percentage">10%</p>
-    </li>
-  </ul>
+    <section className={styles['statistics']}>
+      {title && <h2 className={styles['title']}>{title}</h2>}
+      
+      <ul className={styles['stat-list']}>
+        {stats.map(({ id, label, percentage }) => (
+          <li
+            className={styles['item']}
+            key={id}
+            style={{
+              backgroundColor: '#' + RandomColor(),
+              width: `calc(100% / ${stats.length})`, 
+            }}
+          >
+            <span className={styles['label']}>{label}</span>
+            <span className={styles['percentage']}>{percentage}%</span>
+          </li>
+        ))}
+      </ul>
     </section>
   );
+}
+
+Statistics.propTypes = {
+  title: PropTypes.string, 
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    }).isRequired
+  ).isRequired,
 };
 
-export default Statistics;
+function RandomColor() {
+  return Math.floor(Math.random() * 16777215).toString(16);
+}
+    

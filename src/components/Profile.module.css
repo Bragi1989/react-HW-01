@@ -13,6 +13,8 @@
 }
 
 .avatar {
+    width: 80px;
+    height: 80px;
     border-radius: 100%;
     background-color: gray;
 }
@@ -52,7 +54,7 @@
     margin: 0;
 }
 
-.stats-list {
+.statsList {
     width: 100px;
     height: 50px;
     background-color: aqua;
